@@ -1,26 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        h1 {
-            color: #333;
-            font-size: 3em;
-        }
-    </style>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-</body>
-</html>
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+
+function Home() {
+    return (
+        <div>
+            <h1>Hello, World!</h1>
+            <Link to="/page2">
+                <button>Go to Page 2</button>
+            </Link>
+        </div>
+    );
+}
+
+function Page2() {
+    return (
+        <div>
+            <h1>Having Fun!!!</h1>
+            <Link to="/">
+                <button>Go to Home</button>
+            </Link>
+        </div>
+    );
+}
+
+function App() {
+    return (
+        <Router>
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/page2" component={Page2} />
+            </Switch>
+        </Router>
+    );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
