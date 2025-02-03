@@ -1,38 +1,45 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-
-function Home() {
-    return (
-        <div>
-            <h1>Hello, World!</h1>
-            <Link to="/page2">
-                <button>Go to Page 2</button>
-            </Link>
-        </div>
-    );
-}
-
-function Page2() {
-    return (
-        <div>
-            <h1>Having Fun!!!</h1>
-            <Link to="/">
-                <button>Go to Home</button>
-            </Link>
-        </div>
-    );
-}
-
-function App() {
-    return (
-        <Router>
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/page2" component={Page2} />
-            </Switch>
-        </Router>
-    );
-}
-
-ReactDOM.render(<App />, document.getElementById('root'));
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Early Warning System</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        background-color: #f0f0f0;
+                    }
+                    .container {
+                        text-align: center;
+                        background: white;
+                        padding: 20px;
+                        border-radius: 8px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+                    h1 {
+                        margin-bottom: 20px;
+                    }
+                    p {
+                        margin-bottom: 20px;
+                    }
+                    button {
+                        padding: 10px 20px;
+                        font-size: 16px;
+                        cursor: pointer;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Early Warning System</h1>
+                    <p>Welcome to the Early Warning System homepage. Stay alert and stay safe!</p>
+                    <button onclick="location.href='page2.html'">Go to Page 2</button>
+                </div>
+            </body>
+            </html>
